@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>百家号生成器</title>
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <!--jqueryui-->
+  <link href="//cdn.bootcss.com/jqueryui/1.12.0-rc.2/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">	
+    <div id="title">百家号文章生成器</div>
+    <div>
+      <span>请输入主题：为什么</span>
+      <input id="inputSubject" placeholder="主语">
+      <input id="inputObject" placeholder="谓宾">
+      <button onclick="generateMy()">生成</button>
+    </div>
+    <div id="myArticle"></div>
+	<div id="declaration">声明：本脚本仅供娱乐，请勿用于正规用途</div>
+  </div>
+  <script>
+    window.$ = function (selector) {
+      return document.querySelector(selector);
+    }
+  
+    function generateMy(){
+      var subject=$('#inputSubject').value;
+	  var object=$('#inputObject').value;
+	  var myArticle1="    "+subject+object+"是怎么回事呢？"
+	    +subject+"相信大家都很熟悉，但是"+subject+object
+		+"是怎么回事呢？下面就让小编带大家一起了解吧。</div><div>";
+	  var myArticle2="    "+subject+object
+	    +"，其实这是一件很正常的事情，所以"+subject+object
+		+"。大家可能会惊讶"+subject+"怎么会"+object
+		+"呢？但事实就是这样，小编也感到非常惊讶。</div><div>";
+	  var myArticle3="    这就是关于为什么"+subject
+	    +object+"的事情了，大家有什么想法呢？欢迎在评论区告诉小编一起讨论哦！</div><div>";
+	  $("#myArticle").innerHTML="<div>" + myArticle1 + myArticle2 + myArticle3 + "</div>";
+	}
+  </script>
+  <style>
+    #title{font-weight:bold;}
+    #myArticle{margin:10px;}
+  </style>
+</body>
+
+</html>
+
+
+
+
+
+
